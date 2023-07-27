@@ -11,6 +11,7 @@ export default {
     filename: 'bundle.js',
     clean: true
   },
+  devtool: 'eval-cheap-module-source-map',
   module: {
     rules: [
       {
@@ -42,19 +43,17 @@ export default {
       },
     ]
   },
-  resolve: {
-    extensions: ['.vue', '.tsx', '.ts', '.js'],
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+
   ],
   mode: "development",
   devServer: {
     host: "localhost",
     port: "3000",
-    open: true
+    open: false
   }
 }

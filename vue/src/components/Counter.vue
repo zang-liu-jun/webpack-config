@@ -2,6 +2,11 @@
 import { ref } from 'vue';
 
 const counterRef = ref<number>(0)
+
+const throwError=()=>{
+  // throw new Error('我曹')
+  console.log("hello")
+}
 </script>
 
 <template>
@@ -10,6 +15,7 @@ const counterRef = ref<number>(0)
     <div>
       <button @click="counterRef--">-</button>
       <button @click="counterRef++">+</button>
+      <button @click="throwError">error</button>
     </div>
   </div>
 </template>
